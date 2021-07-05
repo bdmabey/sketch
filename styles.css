@@ -1,0 +1,23 @@
+html body {
+	margin: 0;
+	height: 100%;
+}
+
+#container {
+	display: grid;
+	position: absolute;
+	top: 25%;
+	left: 35%;
+	height: 500px;
+	width: 500px;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.box {
+	margin: 0;
+	height: auto;
+	width: auto;
+	background-color: pink;
+	border: 1px solid black;
+}
