@@ -12,12 +12,11 @@ html body {
 	width: 500px;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-template-rows: 1fr 1fr 1fr 1fr;
+	border: 1px solid black;
 }
 
 .box {
 	margin: 0;
 	height: auto;
 	width: auto;
-	background-color: pink;
-	border: 1px solid black;
 }
