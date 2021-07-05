@@ -1,20 +1,33 @@
 const container = document.querySelector("div");
 
-let size = prompt("Enter a number less than 100.")
+function setSize() {
+	let size = prompt("Enter a number less than 100.")
+	while (size > 100) {
+		size = prompt("Enter a number less than 100")
+	}
 
-container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
-container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+	if (container.hasChildNodes()) {
+		while(container.firstChild) {
+			container.removeChild(container.firstChild);
+		}
+	}
 
-for (let i = 0; i < (size ** 2); i++) {
-	let div = document.createElement("div");
-	div.classList.add("box");
-	container.appendChild(div);
+	container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+	container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+
+	for (let i = 0; i < (size ** 2); i++) {
+		let div = document.createElement("div");
+		div.classList.add("box");
+		container.appendChild(div);
+	}
+	
+	let boxes = Array.from(document.querySelectorAll(".box"));
+	boxes.forEach(box => box.addEventListener('mouseenter', changeColor));
 }
 
 function changeColor(e) {
-	console.log('herr');
 	e.target.style.backgroundColor = "black";
 }
 
-let boxes = Array.from(document.querySelectorAll(".box"));
-boxes.forEach(box => box.addEventListener('mouseenter', changeColor));
+const button = document.querySelector("#clearStart");
+button.addEventListener("click", () => setSize());

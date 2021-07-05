@@ -15,6 +15,12 @@ html body {
 	border: 1px solid black;
 }
 
+#clearStart {
+	position: absolute;
+	top: 80%;
+	left: 50%;
+}
+
 .box {
 	margin: 0;
 	height: auto;
